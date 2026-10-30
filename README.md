@@ -1,8 +1,8 @@
-# Stundenplan – Version 013
+# Stundenplan – Version 014
 
 GitHub-Pages-Web-App für Julia (G5B) und Carolina (G7B).
 
-## Neu in Version 013
+## Neu in Version 014
 
 - Kopfzeilen-Schrift (Titel, Versionsnummer, Aktualisierungsangabe, Datum und Uhrzeit) in beiden Ansichten um **8 CSS-Pixel nach unten** versetzt.
 - Kopfzeilenhöhe, Schullogo und die vertikalen Positionen aller übrigen Elemente bleiben unverändert.
@@ -25,11 +25,11 @@ GitHub-Pages-Web-App für Julia (G5B) und Carolina (G7B).
 
 ## Versionskennung
 
-**013** – einheitlich in der sichtbaren App-Anzeige, `index.html` (APP_VERSION), `app-version.json`, `manifest.webmanifest`, Service-Worker-Cache `stundenplan-013`, der Service-Worker-Versionsantwort und diesem README. ZIP: `Stundenplan_013.zip`.
+**014** – einheitlich in der sichtbaren App-Anzeige, `index.html` (APP_VERSION), `app-version.json`, `manifest.webmanifest`, Service-Worker-Cache `stundenplan-014`, der Service-Worker-Versionsantwort und diesem README. ZIP: `Stundenplan_014.zip`.
 
-## Wichtiger Hinweis zur Umstellung von 009 auf 013
+## Wichtiger Hinweis zur Umstellung von 009 auf 014
 
-Version 009 enthält noch die alte Aktualisierungslogik. Beim **ersten Wechsel von 009 auf 013** kann deshalb noch ein vollständiges Schließen und erneutes Öffnen der installierten iPhone-Web-App nötig sein. Erst ab der geladenen Version 013 steht die neue Ein-Tipp-Aktualisierung zur Verfügung. iOS kann die Aktivierung eines Service Workers verzögern; der manuelle Neustart bleibt als Ausweichlösung erhalten.
+Version 009 enthält noch die alte Aktualisierungslogik. Beim **ersten Wechsel von 009 auf 014** kann deshalb noch ein vollständiges Schließen und erneutes Öffnen der installierten iPhone-Web-App nötig sein. Erst ab der geladenen Version 014 steht die neue Ein-Tipp-Aktualisierung zur Verfügung. iOS kann die Aktivierung eines Service Workers verzögern; der manuelle Neustart bleibt als Ausweichlösung erhalten.
 
 ## GitHub-Upload – alle Dateien ersetzen
 
@@ -45,3 +45,6 @@ Version 009 enthält noch die alte Aktualisierungslogik. Beim **ersten Wechsel v
 - `README.md`
 
 Die Stundenplandaten werden für die Offline-Nutzung lokal gespeichert.
+
+### Korrektur in Version 014
+Das Schullogo wird zusammen mit Titel, Aktualisierungsangabe und Datum/Uhrzeit um 8 CSS-Pixel nach unten verschoben. Die Kopfzeilenhöhe bleibt unverändert.
