@@ -17,7 +17,7 @@
 @media(max-width:390px){.toolbar{padding:0 5px}.toggle button{font-size:clamp(11px,3vw,13px);padding:8px 5px}#todayBtn{font-size:12px;padding:8px 5px}.toggle{gap:2px}.panel .lesson .subject{font-size:20px}.panel .lesson .num{font-size:12px}.panel .lesson .room{font-size:14px}}
 @media(max-width:350px){.toggle button{font-size:11px;padding:7px 3px}#todayBtn{font-size:11px;padding:7px 3px}.toolbar{padding:0 3px}.panel .lesson .subject{font-size:18px}}
 /* Scharfe Kopfzeile und kompakte Karten */
-header{background:linear-gradient(180deg,#244768 0%,#193959 100%);filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;opacity:1;transform:none;-webkit-font-smoothing:antialiased}
+header{background:#193959;filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;opacity:1;transform:none}
 .brand,.brandtext,.brand h1,.status{filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;text-shadow:none!important}
 .titleline{display:flex;align-items:baseline;gap:9px;min-width:0}
 .build-version{font-size:12px;font-weight:350;letter-spacing:.02em;color:#d2e0ef;white-space:nowrap}
@@ -74,8 +74,38 @@ header{padding:10px max(10px,env(safe-area-inset-left))!important;transition:non
 .lesson.is-current>*{position:relative;z-index:1}
 .pausebar.is-current::before{background:color-mix(in srgb,#b58a4a 22%,transparent)}
 @media(prefers-reduced-motion:reduce){.lesson.is-current::before,.pausebar.is-current::before{transition:none}}
-</style></head><body><header><div class="brand"><button id="reload" aria-label="Aktualisieren und offline speichern" title="Aktualisieren und offline speichern"><img src="icon-192.png" alt="Schullogo"></button><div class="brandtext"><div class="titleline"><h1>Stundenplan</h1><span class="build-version" aria-label="App-Version 011">V.011</span></div><div class="status" id="status" aria-live="polite">Lade Stundenplan …</div></div></div></header><div class="toolbar"><nav id="students" class="toggle" aria-label="Schüler auswählen"></nav><button id="todayBtn" aria-label="Heutigen Schultag öffnen" title="Zum heutigen Schultag">Heute</button><nav class="toggle" aria-label="Ansicht wählen"><button id="weekBtn">Woche</button><button id="dayBtn">Tag</button></nav></div><main id="app"></main><div class="help-space" aria-hidden="true"></div><footer class="help"><h2>Tipps zur Bedienung</h2><p>Schullogo antippen oder am Seitenanfang nach unten ziehen: Daten und bei Bedarf die gesamte App aktualisieren. Nur wenn die automatische App-Aktualisierung nicht gelingt, die Web-App vollständig schließen und erneut öffnen.</p><p>In der Wochenansicht einen beliebigen Bereich eines Schultages antippen: Tagesansicht öffnen.</p><p>Die laufende Stunde oder Pause wird farbig umrandet; eine sanfte Füllung zeigt den Zeitfortschritt. In der Tagesansicht nach links oder rechts wischen oder die Pfeile benutzen: Schultag wechseln.</p><p>Julia oder Carolina auswählen und zwischen Woche und Tag umschalten. Die letzte Auswahl wird auf diesem Gerät gespeichert. Mit „Heute“ zum aktuellen Schultag springen (am Wochenende zum Montag).</p><p>Nach dem ersten vollständigen Laden funktioniert der Stundenplan auch offline.</p></footer><div class="notice" id="notice" role="status"></div><script>
-const APP_VERSION='011';const names=['Montag','Dienstag','Mittwoch','Donnerstag','Freitag'];const colors={'F':'#6366f1','G':'#64748b','F/L':'#6366f1','L/F':'#6366f1','MI2/NuT2':'#14b8a6','EI_2/NuT1':'#14b8a6','EI_1/MI1':'#14b8a6','D':'#f59e0b','M':'#3b82f6','E':'#16a34a','Mu':'#a855f7','Ev':'#e8796b','Sw':'#0ea5e9','Sw3':'#0ea5e9','Geo':'#d97706','Ku':'#ec4899','NuT':'#14b8a6','NuT1':'#14b8a6','NuT2':'#14b8a6'};
+
+/* 012: static, opaque iOS header. No text-layer transforms or font smoothing override. */
+header{background-color:#193959!important;background-image:none!important;filter:none!important;transform:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.brand{height:48px;gap:10px;align-items:center}
+.brandtext{flex:1;min-width:0}
+.brand h1{font-size:clamp(18px,3.1vw,23px)!important;white-space:nowrap}
+.titleline{gap:6px}
+.build-version{font-size:11px;flex-shrink:0}
+.status{font-size:clamp(9px,1.65vw,12px)!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.header-clock{flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:2px;min-width:0;font-variant-numeric:tabular-nums}
+.header-date{font-size:clamp(9px,1.6vw,12px);color:#d5e3f2;white-space:nowrap}
+.header-time{font-size:clamp(16px,3vw,21px);font-weight:700;line-height:1.15;color:#fff;white-space:nowrap}
+@media(max-width:390px){.brand{gap:7px}.brand img{width:34px!important;height:34px!important}.brand h1{font-size:18px!important}.build-version{font-size:10px}.status{font-size:9px!important}.header-date{font-size:9px}.header-time{font-size:17px}}
+@media(max-width:340px){.brand h1{font-size:16px!important}.header-date{font-size:8px}.brand{gap:5px}}
+</style></head><body><header><div class="brand"><button id="reload" aria-label="Aktualisieren und offline speichern" title="Aktualisieren und offline speichern"><img src="icon-192.png" alt="Schullogo"></button><div class="brandtext"><div class="titleline"><h1>Stundenplan</h1><span class="build-version" aria-label="App-Version 012">V.012</span></div><div class="status" id="status" aria-live="polite">Lade Stundenplan …</div></div><div class="header-clock" aria-label="Aktuelles Datum und Uhrzeit"><div id="headerDate" class="header-date"></div><div id="headerTime" class="header-time"></div></div></div></header><div class="toolbar"><nav id="students" class="toggle" aria-label="Schüler auswählen"></nav><button id="todayBtn" aria-label="Heutigen Schultag öffnen" title="Zum heutigen Schultag">Heute</button><nav class="toggle" aria-label="Ansicht wählen"><button id="weekBtn">Woche</button><button id="dayBtn">Tag</button></nav></div><main id="app"></main><div class="help-space" aria-hidden="true"></div><footer class="help"><h2>Tipps zur Bedienung</h2><p>Schullogo antippen oder am Seitenanfang nach unten ziehen: Daten und bei Bedarf die gesamte App aktualisieren. Nur wenn die automatische App-Aktualisierung nicht gelingt, die Web-App vollständig schließen und erneut öffnen.</p><p>In der Wochenansicht einen beliebigen Bereich eines Schultages antippen: Tagesansicht öffnen.</p><p>Die laufende Stunde oder Pause wird farbig umrandet; eine sanfte Füllung zeigt den Zeitfortschritt. In der Tagesansicht nach links oder rechts wischen oder die Pfeile benutzen: Schultag wechseln.</p><p>Julia oder Carolina auswählen und zwischen Woche und Tag umschalten. Die letzte Auswahl wird auf diesem Gerät gespeichert. Mit „Heute“ zum aktuellen Schultag springen (am Wochenende zum Montag).</p><p>Nach dem ersten vollständigen Laden funktioniert der Stundenplan auch offline.</p></footer><div class="notice" id="notice" role="status"></div><script>
+
+/* The header clock and the lesson progress use the same local device time. */
+function updateHeaderClock(){
+ const now=new Date();
+ const narrow=window.innerWidth<=650;
+ const opts=narrow
+  ? {weekday:'short',day:'2-digit',month:'2-digit',year:'numeric'}
+  : {weekday:'long',day:'numeric',month:'long',year:'numeric'};
+ document.getElementById('headerDate').textContent=new Intl.DateTimeFormat('de-DE',opts).format(now);
+ document.getElementById('headerTime').textContent=new Intl.DateTimeFormat('de-DE',{hour:'2-digit',minute:'2-digit',hour12:false}).format(now);
+}
+updateHeaderClock();
+setInterval(()=>{if(!document.hidden)updateHeaderClock()},1000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateHeaderClock()});
+window.addEventListener('resize',updateHeaderClock);
+
+const APP_VERSION='012';const names=['Montag','Dienstag','Mittwoch','Donnerstag','Freitag'];const colors={'F':'#6366f1','G':'#64748b','F/L':'#6366f1','L/F':'#6366f1','MI2/NuT2':'#14b8a6','EI_2/NuT1':'#14b8a6','EI_1/MI1':'#14b8a6','D':'#f59e0b','M':'#3b82f6','E':'#16a34a','Mu':'#a855f7','Ev':'#e8796b','Sw':'#0ea5e9','Sw3':'#0ea5e9','Geo':'#d97706','Ku':'#ec4899','NuT':'#14b8a6','NuT1':'#14b8a6','NuT2':'#14b8a6'};
 const $=id=>document.getElementById(id), el=(tag,cls,txt)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(txt!==undefined)x.textContent=txt;return x};const stored=(key,fallback)=>{try{return localStorage.getItem(key)||fallback}catch{return fallback}};const save=(key,value)=>{try{localStorage.setItem(key,value)}catch{}};
 let data=null,student=stored('student','j'),view=stored('view','week'),day=(()=>{const v=Number(stored('day','-1'));if(Number.isInteger(v)&&v>=0&&v<5)return v;const d=new Date().getDay();return d>=1&&d<=5?d-1:0})(),busy=false,refreshing=false,remoteData=null,remoteVersion=null,toastTimer=0,renderTimer=0;const reduce=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
 function current(){return data.students.find(s=>s.id===student)||data.students[0]}function dateText(){const d=stored('lastUpdate','');return d?new Date(d).toLocaleString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):'Noch nicht offline gespeichert'}function status(msg,available=false){$('status').textContent=msg;$('status').classList.toggle('available',available)}function normalStatus(){status('Letzte Aktualisierung: '+dateText())}function toast(msg){const n=$('notice');n.textContent=msg;n.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>n.classList.remove('show'),2800)}

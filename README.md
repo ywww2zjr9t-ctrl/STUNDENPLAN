@@ -1,8 +1,15 @@
-# Stundenplan – Version 011
+# Stundenplan – Version 012
 
 GitHub-Pages-Web-App für Julia (G5B) und Carolina (G7B).
 
-## Neu in Version 011
+## Neu in Version 012
+
+- Feste, deckende Kopfzeile ohne CSS-Filter, Skalierung oder Schriftglättungs-Override, um iOS-WebKit-Darstellungsprobleme zu vermeiden.
+- Rechts aktuelle Gerätezeit sowie Wochentag und Datum; kompakte Schreibweise auf iPhones, ausgeschrieben auf größeren Bildschirmen.
+- Gleiche Höhe der Kopfzeile in Wochen- und Tagesansicht.
+- Korrektur der zeitgesteuerten Pausenmarkierung: Sekunden werden einheitlich verglichen.
+
+## Bewährte Funktionen aus Version 011
 
 - Zwei schmale, durchgehende Pausenbalken in Sandbeige: **09:30–09:45 Uhr** und **11:15–11:25 Uhr**. In der Wochenansicht erstrecken sie sich über alle Spalten, in der Tagesansicht über die gesamte Tagesbreite.
 - Laufende Pausen erhalten einen kräftigen sandfarbenen Rahmen; die aktive Unterrichtsstunde behält den Rahmen in der jeweiligen Fachfarbe.
@@ -13,11 +20,11 @@ GitHub-Pages-Web-App für Julia (G5B) und Carolina (G7B).
 
 ## Versionskennung
 
-**011** – einheitlich in der sichtbaren App-Anzeige, `index.html` (APP_VERSION), `app-version.json`, `manifest.webmanifest`, Service-Worker-Cache `stundenplan-011`, der Service-Worker-Versionsantwort und diesem README. ZIP: `Stundenplan_011.zip`.
+**012** – einheitlich in der sichtbaren App-Anzeige, `index.html` (APP_VERSION), `app-version.json`, `manifest.webmanifest`, Service-Worker-Cache `stundenplan-012`, der Service-Worker-Versionsantwort und diesem README. ZIP: `Stundenplan_012.zip`.
 
-## Wichtiger Hinweis zur Umstellung von 009 auf 011
+## Wichtiger Hinweis zur Umstellung von 009 auf 012
 
-Version 009 enthält noch die alte Aktualisierungslogik. Beim **ersten Wechsel von 009 auf 011** kann deshalb noch ein vollständiges Schließen und erneutes Öffnen der installierten iPhone-Web-App nötig sein. Erst ab der geladenen Version 011 steht die neue Ein-Tipp-Aktualisierung zur Verfügung. iOS kann die Aktivierung eines Service Workers verzögern; der manuelle Neustart bleibt als Ausweichlösung erhalten.
+Version 009 enthält noch die alte Aktualisierungslogik. Beim **ersten Wechsel von 009 auf 012** kann deshalb noch ein vollständiges Schließen und erneutes Öffnen der installierten iPhone-Web-App nötig sein. Erst ab der geladenen Version 012 steht die neue Ein-Tipp-Aktualisierung zur Verfügung. iOS kann die Aktivierung eines Service Workers verzögern; der manuelle Neustart bleibt als Ausweichlösung erhalten.
 
 ## GitHub-Upload – alle Dateien ersetzen
 
