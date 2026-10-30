@@ -1,19 +1,21 @@
-# Stundenplan 007
+# Stundenplan 008
 
-Vollständiges GitHub-Pages-Paket mit zehn Dateien. **Alle Dateien im Hauptverzeichnis des vorhandenen Repositorys ersetzen, einschließlich `README.md`.**
+Vollständiges GitHub-Pages-Paket. Alle zehn Dateien im Hauptverzeichnis ersetzen, einschließlich `README.md`.
 
-## Neu in Version 007
+## Änderungen gegenüber 007
 
-Die aktuell laufende Stunde erhält in Wochen- und Tagesansicht einen feinen, 2 Pixel breiten Rahmen in der kräftigen Farbe des jeweiligen Unterrichtsfachs. Die Kachelfarbe und Schriftgröße bleiben unverändert. Die Markierung erscheint nur am tatsächlichen Wochentag und nur während des exakten Zeitintervalls der Unterrichtsstunde. Pausen, Zeiten vor/nach Unterricht und Wochenenden bleiben unmarkiert. Beim Wechsel zur nächsten Stunde wird die Markierung automatisch aktualisiert, auch offline. Bei Rückkehr aus dem Hintergrund wird die Zeit sofort neu geprüft. In der Tagesansicht erscheint die Markierung nur, wenn der heutige Tag angezeigt wird.
-
-Alle Funktionen von 006 bleiben erhalten (Heute-Button, kompakte Tageskarten, Langnamen, Französisch J207, Animationen, Offline-Speicherung, Aktualisierung per Logo und Herunterziehen).
+- Kopfzeile ohne Weichzeichner, mit deckendem dunkelblauem Farbverlauf und ohne Textschatten.
+- Versionsnummer **V.008** klein und leicht direkt neben „Stundenplan“; sie ist fest im geladenen HTML-Programmcode hinterlegt und zeigt daher die tatsächlich ausgeführte App-Version an.
+- Tageskarten auf maximal 82 CSS-Pixel Höhe verkürzt (mindestens 72 Pixel), Zwischenraum 4 Pixel; Schriftgrößen bleiben erhalten. Bei sehr kleinen Displays kann weiterhin gescrollt werden.
+- Wochenkarten auf mindestens 76 CSS-Pixel Höhe verdichtet; Schriftgrößen bleiben erhalten.
+- Bestehende Echtzeit-Markierung, Heute-Button, Schülerauswahl, Gesten, Offline-Modus und Stundenplandaten unverändert.
 
 ## Vollständige Dateiliste
 
 - `index.html` – Oberfläche und Echtzeit-Markierung
 - `stundenplaene.json` – Unterrichtsdaten Julia/Carolina
-- `app-version.json` – Versionskennung 007
-- `sw.js` – Offline-Cache 007
+- `app-version.json` – Versionskennung 008
+- `sw.js` – Offline-Cache 008
 - `manifest.webmanifest` – PWA-Konfiguration
 - `icon-180.png` – iPhone-Icon
 - `icon-192.png` – PWA-Icon
