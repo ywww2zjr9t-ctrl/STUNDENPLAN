@@ -1,0 +1,287 @@
+{
+  "version": "002",
+  "times": [
+    "08:00–08:45",
+    "08:45–09:30",
+    "09:45–10:30",
+    "10:30–11:15",
+    "11:25–12:10",
+    "12:10–12:55"
+  ],
+  "students": [
+    {
+      "id": "j",
+      "name": "J",
+      "class": "G5B",
+      "days": [
+        [
+          {
+            "subject": "D",
+            "room": "L202"
+          },
+          {
+            "subject": "D",
+            "room": "L202"
+          },
+          {
+            "subject": "Mu",
+            "room": ""
+          },
+          {
+            "subject": "Mu",
+            "room": ""
+          },
+          {
+            "subject": "Ev",
+            "room": "U105"
+          },
+          {
+            "subject": "Ev",
+            "room": "U105"
+          }
+        ],
+        [
+          {
+            "subject": "MI2/NuT2",
+            "room": "L202/B/C1"
+          },
+          {
+            "subject": "M",
+            "room": "L202"
+          },
+          {
+            "subject": "Sw3",
+            "room": ""
+          },
+          {
+            "subject": "D",
+            "room": "L202"
+          },
+          {
+            "subject": "E",
+            "room": "L202"
+          },
+          {
+            "subject": "E",
+            "room": "L202"
+          }
+        ],
+        [
+          {
+            "subject": "Sw",
+            "room": ""
+          },
+          {
+            "subject": "Sw",
+            "room": ""
+          },
+          {
+            "subject": "Geo",
+            "room": "L202"
+          },
+          {
+            "subject": "M",
+            "room": "L202"
+          },
+          {
+            "subject": "Ku",
+            "room": ""
+          },
+          {
+            "subject": "Ku",
+            "room": ""
+          }
+        ],
+        [
+          {
+            "subject": "E",
+            "room": "L202"
+          },
+          {
+            "subject": "E",
+            "room": "L202"
+          },
+          {
+            "subject": "M",
+            "room": "L202"
+          },
+          {
+            "subject": "Geo",
+            "room": "L202"
+          },
+          {
+            "subject": "NuT",
+            "room": "L202"
+          },
+          {
+            "subject": "NuT",
+            "room": "L202"
+          }
+        ],
+        [
+          {
+            "subject": "EI_2/NuT1",
+            "room": "L202/B/C2"
+          },
+          {
+            "subject": "D",
+            "room": "L202"
+          },
+          {
+            "subject": "D",
+            "room": "L202"
+          },
+          {
+            "subject": "E",
+            "room": "L202"
+          },
+          {
+            "subject": "M",
+            "room": "L202"
+          },
+          {
+            "subject": "EI_1/MI1",
+            "room": "L202/M101"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "c",
+      "name": "C",
+      "class": "G7B",
+      "days": [
+        [
+          {
+            "subject": "Sw",
+            "room": ""
+          },
+          {
+            "subject": "Sw",
+            "room": ""
+          },
+          {
+            "subject": "M",
+            "room": "J207"
+          },
+          {
+            "subject": "D",
+            "room": "J207"
+          },
+          {
+            "subject": "NuT/NuT1",
+            "room": "/"
+          },
+          {
+            "subject": "NuT/NuT1",
+            "room": "/"
+          }
+        ],
+        [
+          {
+            "subject": "M",
+            "room": "J207"
+          },
+          {
+            "subject": "Geo",
+            "room": "J207"
+          },
+          {
+            "subject": "Ku",
+            "room": ""
+          },
+          {
+            "subject": "Ku",
+            "room": ""
+          },
+          {
+            "subject": "F/L",
+            "room": "J207/J206"
+          },
+          {
+            "subject": "G",
+            "room": "J207"
+          }
+        ],
+        [
+          {
+            "subject": "F/L",
+            "room": "J207/J206"
+          },
+          {
+            "subject": "D",
+            "room": "J207"
+          },
+          {
+            "subject": "Mu",
+            "room": ""
+          },
+          {
+            "subject": "E",
+            "room": "J207"
+          },
+          {
+            "subject": "Ev",
+            "room": "J207"
+          },
+          {
+            "subject": "Ev",
+            "room": "J207"
+          }
+        ],
+        [
+          {
+            "subject": "M",
+            "room": "J207"
+          },
+          {
+            "subject": "M",
+            "room": "J207"
+          },
+          {
+            "subject": "Mu",
+            "room": ""
+          },
+          {
+            "subject": "E",
+            "room": "J207"
+          },
+          {
+            "subject": "D",
+            "room": "J207"
+          },
+          {
+            "subject": "D",
+            "room": "J207"
+          }
+        ],
+        [
+          {
+            "subject": "G",
+            "room": "J207"
+          },
+          {
+            "subject": "L/F",
+            "room": "J206/J207"
+          },
+          {
+            "subject": "L/F",
+            "room": "J206/J207"
+          },
+          {
+            "subject": "Geo",
+            "room": "J207"
+          },
+          {
+            "subject": "E",
+            "room": "J207"
+          },
+          {
+            "subject": "E",
+            "room": "J207"
+          }
+        ]
+      ]
+    }
+  ]
+}
