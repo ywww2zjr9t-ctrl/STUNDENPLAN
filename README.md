@@ -1,29 +1,28 @@
-# Stundenplan 003
+# Stundenplan 004
 
-Zwei Schüler: J (G5B) und C (G7B). Daten aus den zuletzt bereitgestellten Tabellenbildern.
+Version 004 für GitHub Pages mit J (G5B) und C (G7B).
 
-## GitHub Pages
-Alle neun Dateien im Repository ersetzen bzw. hochladen. Settings → Pages → Deploy from a branch → main / (root).
+## Änderungen
+- Schüler- und Ansichtsumschaltung gemeinsam in einer Zeile, aktive Auswahl dunkelblau.
+- Wochenansicht mit separater Stundenspalte, Beginn und Ende untereinander.
+- Größere Schriften und sehr dezente Fachhintergründe.
+- Tagesansicht mit animiertem Wischen und Navigationspfeilen.
+- Unterrichtszeiten korrekt zugeordnet: 08:00–08:45, 08:45–09:30, 09:45–10:30, 10:30–11:15, 11:25–12:10, 12:10–12:55.
+- Schullogo und PWA-Icons unverändert.
 
-## Vollständige Dateiliste
-- `index.html` – Wochen- und Tagesansicht, Reiter, Wischgesten, Uhrzeiten
-- `stundenplaene.json` – die beiden Stundenpläne, später einzeln austauschbar
-- `manifest.webmanifest` – Web-App-Metadaten
-- `sw.js` – Offline-Speicherung (Cache Version 003)
-- `README.md` – diese Beschreibung
+## GitHub Upload
+**Alle neun Dateien im Repository-Hauptverzeichnis ersetzen** (keine ZIP-Datei hochladen):
 
-## Anmerkungen zur Vorlage
-- J: Ev statt K, in der neuen Tabelle Raum U105.
-- C: Ev statt K am Mittwoch in Stunde 5 und 6, Raum J207 (aus der jeweiligen Ev/K-Zuordnung).
-- Mehrfachangaben wie F/L oder MI2/NuT2 bleiben gemäß Vorlage bestehen, solange die Unterrichtsgruppe nicht festgelegt ist.
-- Fehlende Räume bleiben leer. Ein Schrägstrich als Raumangabe ist in der Quelle so angegeben.
-- Zeiten gelten für beide Klassen, Stunde 1 bis 6.
-- Bei Änderungen die Seite einmal mit Internetverbindung aktualisieren.
+- index.html
+- stundenplaene.json
+- manifest.webmanifest
+- sw.js
+- icon-180.png
+- icon-192.png
+- icon-512.png
+- icon-1024.png
+- README.md
 
-## Neues Schullogo
-- `icon-1024.png` – quadratisches Haupticon ohne abgerundete Außenecken
-- `icon-512.png` – PWA-Icon
-- `icon-192.png` – Browser-Icon und Logo im Kopfbereich
-- `icon-180.png` – iOS-Home-Bildschirm-Icon
+Die App kann über GitHub Pages als Website oder zum Home-Bildschirm hinzugefügt genutzt werden. Bei Aktualisierung die Seite ggf. neu laden.
 
-Beim Ersetzen alle neun Dateien hochladen, einschließlich README.md. Auf iOS eventuell bestehendes Home-Bildschirm-Icon entfernen und die Website erneut zum Home-Bildschirm hinzufügen.
+Die Schülerdaten sind aus Version 003 übernommen. Die getrennten Unterrichtsgruppen werden weiterhin gemeinsam angezeigt.
