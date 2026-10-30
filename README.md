@@ -1,15 +1,15 @@
-# Stundenplan – Version 015
+# Stundenplan – Version 016
 
 GitHub-Pages-Web-App für Julia (G5B) und Carolina (G7B).
 
-## Neu in Version 015
+## Neu in Version 016
 
 - Aktive Wochentage in der Wochenansicht sind dunkelblau mit weißer Schrift; an Wochenenden ist kein Wochentag aktiv.
 - In der Tagesansicht ist der angezeigte Tag stets dunkelblau mit weißer Schrift.
 - Der Heute-Button wird dunkelblau, wenn der tatsächlich heutige Wochentag ausgewählt ist (Montag bis Freitag); ansonsten bleibt er hellblau.
 - Die Buttons der Schüler-/Ansichtsauswahl und die Wochentagsnavigation erhalten exakt dieselbe Höhe (mobil 35 CSS-Pixel, größere Bildschirme 40 CSS-Pixel).
 - Das gemeinsame Höhenraster bleibt erhalten; Logo und Kopfzeileninhalte bleiben wie in Version 014 gemeinsam um 8 CSS-Pixel nach unten verschoben.
-- Die Versionskennung ist in allen relevanten Dateien 015.
+- Die Versionskennung ist in allen relevanten Dateien 016.
 
 ## Bewährte Funktionen aus Version 011
 
@@ -22,11 +22,11 @@ GitHub-Pages-Web-App für Julia (G5B) und Carolina (G7B).
 
 ## Versionskennung
 
-**015** – einheitlich in der sichtbaren App-Anzeige, `index.html` (APP_VERSION), `app-version.json`, `manifest.webmanifest`, Service-Worker-Cache `stundenplan-015`, der Service-Worker-Versionsantwort und diesem README. ZIP: `Stundenplan_015.zip`.
+**016** – einheitlich in der sichtbaren App-Anzeige, `index.html` (APP_VERSION), `app-version.json`, `manifest.webmanifest`, Service-Worker-Cache `stundenplan-016`, der Service-Worker-Versionsantwort und diesem README. ZIP: `Stundenplan_016.zip`.
 
-## Wichtiger Hinweis zur Umstellung von 009 auf 015
+## Wichtiger Hinweis zur Umstellung von 009 auf 016
 
-Version 009 enthält noch die alte Aktualisierungslogik. Beim **ersten Wechsel von 009 auf 015** kann deshalb noch ein vollständiges Schließen und erneutes Öffnen der installierten iPhone-Web-App nötig sein. Erst ab der geladenen Version 015 steht die neue Ein-Tipp-Aktualisierung zur Verfügung. iOS kann die Aktivierung eines Service Workers verzögern; der manuelle Neustart bleibt als Ausweichlösung erhalten.
+Version 009 enthält noch die alte Aktualisierungslogik. Beim **ersten Wechsel von 009 auf 016** kann deshalb noch ein vollständiges Schließen und erneutes Öffnen der installierten iPhone-Web-App nötig sein. Erst ab der geladenen Version 016 steht die neue Ein-Tipp-Aktualisierung zur Verfügung. iOS kann die Aktivierung eines Service Workers verzögern; der manuelle Neustart bleibt als Ausweichlösung erhalten.
 
 ## GitHub-Upload – alle Dateien ersetzen
 
@@ -43,5 +43,10 @@ Version 009 enthält noch die alte Aktualisierungslogik. Beim **ersten Wechsel v
 
 Die Stundenplandaten werden für die Offline-Nutzung lokal gespeichert.
 
-### Korrektur in Version 015
+### Korrektur in Version 016
 Das Schullogo wird zusammen mit Titel, Aktualisierungsangabe und Datum/Uhrzeit um 8 CSS-Pixel nach unten verschoben. Die Kopfzeilenhöhe bleibt unverändert.
+
+
+## Korrektur in Version 016
+
+Der Heute-Button ist nur in der Tagesansicht aktiv (dunkelblau), wenn der angezeigte Tag dem heutigen Wochentag entspricht. In der Wochenansicht bleibt er immer inaktiv (hellblau) und kann zum Öffnen des heutigen Tages angetippt werden. Am Wochenende bleibt er inaktiv; Antippen öffnet Montag.
