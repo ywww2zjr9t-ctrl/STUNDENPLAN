@@ -1,5 +1,5 @@
 {
-  "version": "004",
+  "version": "005",
   "times": [
     "08:00–08:45",
     "08:45–09:30",
@@ -11,7 +11,7 @@
   "students": [
     {
       "id": "j",
-      "name": "J",
+      "name": "Julia",
       "class": "G5B",
       "days": [
         [
@@ -148,7 +148,7 @@
     },
     {
       "id": "c",
-      "name": "C",
+      "name": "Carolina",
       "class": "G7B",
       "days": [
         [

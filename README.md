@@ -1,28 +1,24 @@
-# Stundenplan 004
+# Stundenplan 005
 
-Version 004 für GitHub Pages mit J (G5B) und C (G7B).
+Für GitHub Pages: **Alle 10 Dateien** aus dem ZIP in das Hauptverzeichnis des bestehenden Repositorys hochladen und die vorhandenen ersetzen.
 
-## Änderungen
-- Schüler- und Ansichtsumschaltung gemeinsam in einer Zeile, aktive Auswahl dunkelblau.
-- Wochenansicht mit separater Stundenspalte, Beginn und Ende untereinander.
-- Größere Schriften und sehr dezente Fachhintergründe.
-- Tagesansicht mit animiertem Wischen und Navigationspfeilen.
-- Unterrichtszeiten korrekt zugeordnet: 08:00–08:45, 08:45–09:30, 09:45–10:30, 10:30–11:15, 11:25–12:10, 12:10–12:55.
-- Schullogo und PWA-Icons unverändert.
+- `index.html` – Oberfläche, Tageswechsel, Animationen, Aktualisierung und Anleitung
+- `stundenplaene.json` – Unterrichtsdaten von Julia (G5B) und Carolina (G7B)
+- `app-version.json` – Programmversion für den Update-Hinweis
+- `sw.js` – Offline-Cache und Aktualisierung
+- `manifest.webmanifest` – Web-App-Manifest
+- `icon-180.png` – iOS-Icon
+- `icon-192.png` – Icon
+- `icon-512.png` – Icon
+- `icon-1024.png` – Icon
+- `README.md` – diese Datei
 
-## GitHub Upload
-**Alle neun Dateien im Repository-Hauptverzeichnis ersetzen** (keine ZIP-Datei hochladen):
+## Bedienung
 
-- index.html
-- stundenplaene.json
-- manifest.webmanifest
-- sw.js
-- icon-180.png
-- icon-192.png
-- icon-512.png
-- icon-1024.png
-- README.md
+- Schullogo antippen: aktuelle Daten und App-Dateien herunterladen und offline sichern.
+- Vom oberen Bildschirmrand herunterziehen: Aktualisierung.
+- Wochenansicht: Ganze Tagesspalte antippen.
+- Tagesansicht: Wischen oder Pfeile benutzen.
+- Kurzanleitung erst unterhalb des Stundenplans sichtbar.
 
-Die App kann über GitHub Pages als Website oder zum Home-Bildschirm hinzugefügt genutzt werden. Bei Aktualisierung die Seite ggf. neu laden.
-
-Die Schülerdaten sind aus Version 003 übernommen. Die getrennten Unterrichtsgruppen werden weiterhin gemeinsam angezeigt.
+**Hinweis:** Die Aktualisierungsanzeige vergleicht Unterrichtsdaten und die Programmversionsdatei. Offline kann keine neue Serverversion erkannt werden. Wenn eine neue App-Version heruntergeladen wurde, App neu öffnen. Die Zeitangabe bezeichnet den Zeitpunkt des erfolgreichen Downloads, nicht den Zeitpunkt der letzten Änderung am Stundenplan. Browser-Speicher kann vom Betriebssystem in Ausnahmefällen gelöscht werden.
