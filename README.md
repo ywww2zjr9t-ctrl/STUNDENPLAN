@@ -1,26 +1,35 @@
-# Stundenplan 008
+# Stundenplan – Version 010
 
-Vollständiges GitHub-Pages-Paket. Alle zehn Dateien im Hauptverzeichnis ersetzen, einschließlich `README.md`.
+GitHub-Pages-Web-App für Julia (G5B) und Carolina (G7B).
 
-## Änderungen gegenüber 007
+## Neu in Version 010
 
-- Kopfzeile ohne Weichzeichner, mit deckendem dunkelblauem Farbverlauf und ohne Textschatten.
-- Versionsnummer **V.008** klein und leicht direkt neben „Stundenplan“; sie ist fest im geladenen HTML-Programmcode hinterlegt und zeigt daher die tatsächlich ausgeführte App-Version an.
-- Tageskarten auf maximal 82 CSS-Pixel Höhe verkürzt (mindestens 72 Pixel), Zwischenraum 4 Pixel; Schriftgrößen bleiben erhalten. Bei sehr kleinen Displays kann weiterhin gescrollt werden.
-- Wochenkarten auf mindestens 76 CSS-Pixel Höhe verdichtet; Schriftgrößen bleiben erhalten.
-- Bestehende Echtzeit-Markierung, Heute-Button, Schülerauswahl, Gesten, Offline-Modus und Stundenplandaten unverändert.
+- Ein Tipp auf das Schullogo prüft sowohl Stundenplandaten als auch die Programmversion.
+- Bei einer neuen Programmversion wird der neue Service Worker installiert und aktiviert; anschließend lädt sich die Web-App automatisch neu.
+- Nach dem Neuladen prüft die App ihre **im tatsächlich geladenen HTML enthaltene** Versionsnummer. Die Versionsnummer wird niemals nur aufgrund der Server-Metadaten hochgezählt.
+- Wenn die automatische Aktivierung oder das Neuladen scheitert, erscheint der Hinweis, die Web-App über den iPhone-App-Umschalter vollständig zu beenden und neu zu starten.
+- Ohne neue Programmversion werden nur die Stundenplandaten und die Offline-Dateien aktualisiert.
+- Die bisherige Stundenplananzeige, das feste sechsstündige Raster, die Schülerwahl, die Fachfarben und die aktuelle Stundenmarkierung bleiben erhalten.
 
-## Vollständige Dateiliste
+## Versionskennung
 
-- `index.html` – Oberfläche und Echtzeit-Markierung
-- `stundenplaene.json` – Unterrichtsdaten Julia/Carolina
-- `app-version.json` – Versionskennung 008
-- `sw.js` – Offline-Cache 008
-- `manifest.webmanifest` – PWA-Konfiguration
-- `icon-180.png` – iPhone-Icon
-- `icon-192.png` – PWA-Icon
-- `icon-512.png` – PWA-Icon
-- `icon-1024.png` – hochauflösendes Icon
-- `README.md` – diese Anleitung
+**010** – einheitlich in der sichtbaren App-Anzeige, `index.html` (APP_VERSION), `app-version.json`, `manifest.webmanifest`, Service-Worker-Cache `stundenplan-010`, der Service-Worker-Versionsantwort und diesem README. ZIP: `Stundenplan_010.zip`.
 
-Nach dem Hochladen die App online öffnen und bei Bedarf über das Logo aktualisieren. Bei iOS kann ein vollständiges Schließen und erneutes Öffnen der installierten App erforderlich sein, um den neuen Programmcode zu laden.
+## Wichtiger Hinweis zur Umstellung von 009 auf 010
+
+Version 009 enthält noch die alte Aktualisierungslogik. Beim **ersten Wechsel von 009 auf 010** kann deshalb noch ein vollständiges Schließen und erneutes Öffnen der installierten iPhone-Web-App nötig sein. Erst ab der geladenen Version 010 steht die neue Ein-Tipp-Aktualisierung zur Verfügung. iOS kann die Aktivierung eines Service Workers verzögern; der manuelle Neustart bleibt als Ausweichlösung erhalten.
+
+## GitHub-Upload – alle Dateien ersetzen
+
+- `index.html`
+- `stundenplaene.json`
+- `app-version.json`
+- `sw.js`
+- `manifest.webmanifest`
+- `icon-180.png`
+- `icon-192.png`
+- `icon-512.png`
+- `icon-1024.png`
+- `README.md`
+
+Die Stundenplandaten werden für die Offline-Nutzung lokal gespeichert.
