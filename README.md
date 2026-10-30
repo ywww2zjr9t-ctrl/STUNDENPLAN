@@ -1,24 +1,24 @@
-# Stundenplan 005
+# Stundenplan 007
 
-Für GitHub Pages: **Alle 10 Dateien** aus dem ZIP in das Hauptverzeichnis des bestehenden Repositorys hochladen und die vorhandenen ersetzen.
+Vollständiges GitHub-Pages-Paket mit zehn Dateien. **Alle Dateien im Hauptverzeichnis des vorhandenen Repositorys ersetzen, einschließlich `README.md`.**
 
-- `index.html` – Oberfläche, Tageswechsel, Animationen, Aktualisierung und Anleitung
-- `stundenplaene.json` – Unterrichtsdaten von Julia (G5B) und Carolina (G7B)
-- `app-version.json` – Programmversion für den Update-Hinweis
-- `sw.js` – Offline-Cache und Aktualisierung
-- `manifest.webmanifest` – Web-App-Manifest
-- `icon-180.png` – iOS-Icon
-- `icon-192.png` – Icon
-- `icon-512.png` – Icon
-- `icon-1024.png` – Icon
-- `README.md` – diese Datei
+## Neu in Version 007
 
-## Bedienung
+Die aktuell laufende Stunde erhält in Wochen- und Tagesansicht einen feinen, 2 Pixel breiten Rahmen in der kräftigen Farbe des jeweiligen Unterrichtsfachs. Die Kachelfarbe und Schriftgröße bleiben unverändert. Die Markierung erscheint nur am tatsächlichen Wochentag und nur während des exakten Zeitintervalls der Unterrichtsstunde. Pausen, Zeiten vor/nach Unterricht und Wochenenden bleiben unmarkiert. Beim Wechsel zur nächsten Stunde wird die Markierung automatisch aktualisiert, auch offline. Bei Rückkehr aus dem Hintergrund wird die Zeit sofort neu geprüft. In der Tagesansicht erscheint die Markierung nur, wenn der heutige Tag angezeigt wird.
 
-- Schullogo antippen: aktuelle Daten und App-Dateien herunterladen und offline sichern.
-- Vom oberen Bildschirmrand herunterziehen: Aktualisierung.
-- Wochenansicht: Ganze Tagesspalte antippen.
-- Tagesansicht: Wischen oder Pfeile benutzen.
-- Kurzanleitung erst unterhalb des Stundenplans sichtbar.
+Alle Funktionen von 006 bleiben erhalten (Heute-Button, kompakte Tageskarten, Langnamen, Französisch J207, Animationen, Offline-Speicherung, Aktualisierung per Logo und Herunterziehen).
 
-**Hinweis:** Die Aktualisierungsanzeige vergleicht Unterrichtsdaten und die Programmversionsdatei. Offline kann keine neue Serverversion erkannt werden. Wenn eine neue App-Version heruntergeladen wurde, App neu öffnen. Die Zeitangabe bezeichnet den Zeitpunkt des erfolgreichen Downloads, nicht den Zeitpunkt der letzten Änderung am Stundenplan. Browser-Speicher kann vom Betriebssystem in Ausnahmefällen gelöscht werden.
+## Vollständige Dateiliste
+
+- `index.html` – Oberfläche und Echtzeit-Markierung
+- `stundenplaene.json` – Unterrichtsdaten Julia/Carolina
+- `app-version.json` – Versionskennung 007
+- `sw.js` – Offline-Cache 007
+- `manifest.webmanifest` – PWA-Konfiguration
+- `icon-180.png` – iPhone-Icon
+- `icon-192.png` – PWA-Icon
+- `icon-512.png` – PWA-Icon
+- `icon-1024.png` – hochauflösendes Icon
+- `README.md` – diese Anleitung
+
+Nach dem Hochladen die App online öffnen und bei Bedarf über das Logo aktualisieren. Bei iOS kann ein vollständiges Schließen und erneutes Öffnen der installierten App erforderlich sein, um den neuen Programmcode zu laden.

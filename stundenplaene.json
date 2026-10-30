@@ -1,5 +1,5 @@
 {
-  "version": "005",
+  "version": "006",
   "times": [
     "08:00–08:45",
     "08:45–09:30",
@@ -195,8 +195,8 @@
             "room": ""
           },
           {
-            "subject": "F/L",
-            "room": "J207/J206"
+            "subject": "F",
+            "room": "J207"
           },
           {
             "subject": "G",
@@ -205,8 +205,8 @@
         ],
         [
           {
-            "subject": "F/L",
-            "room": "J207/J206"
+            "subject": "F",
+            "room": "J207"
           },
           {
             "subject": "D",
@@ -261,12 +261,12 @@
             "room": "J207"
           },
           {
-            "subject": "L/F",
-            "room": "J206/J207"
+            "subject": "F",
+            "room": "J207"
           },
           {
-            "subject": "L/F",
-            "room": "J206/J207"
+            "subject": "F",
+            "room": "J207"
           },
           {
             "subject": "Geo",
