@@ -1,8 +1,13 @@
-# Stundenplan – Version 012
+# Stundenplan – Version 013
 
 GitHub-Pages-Web-App für Julia (G5B) und Carolina (G7B).
 
-## Neu in Version 012
+## Neu in Version 013
+
+- Kopfzeilen-Schrift (Titel, Versionsnummer, Aktualisierungsangabe, Datum und Uhrzeit) in beiden Ansichten um **8 CSS-Pixel nach unten** versetzt.
+- Kopfzeilenhöhe, Schullogo und die vertikalen Positionen aller übrigen Elemente bleiben unverändert.
+- iPhone-Test zur Unschärfe weiterhin erforderlich.
+
 
 - Feste, deckende Kopfzeile ohne CSS-Filter, Skalierung oder Schriftglättungs-Override, um iOS-WebKit-Darstellungsprobleme zu vermeiden.
 - Rechts aktuelle Gerätezeit sowie Wochentag und Datum; kompakte Schreibweise auf iPhones, ausgeschrieben auf größeren Bildschirmen.
@@ -20,11 +25,11 @@ GitHub-Pages-Web-App für Julia (G5B) und Carolina (G7B).
 
 ## Versionskennung
 
-**012** – einheitlich in der sichtbaren App-Anzeige, `index.html` (APP_VERSION), `app-version.json`, `manifest.webmanifest`, Service-Worker-Cache `stundenplan-012`, der Service-Worker-Versionsantwort und diesem README. ZIP: `Stundenplan_012.zip`.
+**013** – einheitlich in der sichtbaren App-Anzeige, `index.html` (APP_VERSION), `app-version.json`, `manifest.webmanifest`, Service-Worker-Cache `stundenplan-013`, der Service-Worker-Versionsantwort und diesem README. ZIP: `Stundenplan_013.zip`.
 
-## Wichtiger Hinweis zur Umstellung von 009 auf 012
+## Wichtiger Hinweis zur Umstellung von 009 auf 013
 
-Version 009 enthält noch die alte Aktualisierungslogik. Beim **ersten Wechsel von 009 auf 012** kann deshalb noch ein vollständiges Schließen und erneutes Öffnen der installierten iPhone-Web-App nötig sein. Erst ab der geladenen Version 012 steht die neue Ein-Tipp-Aktualisierung zur Verfügung. iOS kann die Aktivierung eines Service Workers verzögern; der manuelle Neustart bleibt als Ausweichlösung erhalten.
+Version 009 enthält noch die alte Aktualisierungslogik. Beim **ersten Wechsel von 009 auf 013** kann deshalb noch ein vollständiges Schließen und erneutes Öffnen der installierten iPhone-Web-App nötig sein. Erst ab der geladenen Version 013 steht die neue Ein-Tipp-Aktualisierung zur Verfügung. iOS kann die Aktivierung eines Service Workers verzögern; der manuelle Neustart bleibt als Ausweichlösung erhalten.
 
 ## GitHub-Upload – alle Dateien ersetzen
 
