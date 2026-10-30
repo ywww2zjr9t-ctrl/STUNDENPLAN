@@ -57,24 +57,47 @@ header{padding:10px max(10px,env(safe-area-inset-left))!important;transition:non
 .panel .lesson .room{font-size:clamp(13px,3.7vw,18px)}
 @media(max-width:390px){.week{grid-template-columns:47px repeat(5,minmax(0,1fr));gap:2px}.week .daycol,.week .timecol{gap:var(--row-gap)}.week .lesson .subject{font-size:11px}.week .lesson .room{font-size:10px}.day-title{min-width:0}}
 @media(max-width:350px){.day-title{min-width:0}}
-</style></head><body><header><div class="brand"><button id="reload" aria-label="Aktualisieren und offline speichern" title="Aktualisieren und offline speichern"><img src="icon-192.png" alt="Schullogo"></button><div class="brandtext"><div class="titleline"><h1>Stundenplan</h1><span class="build-version" aria-label="App-Version 010">V.010</span></div><div class="status" id="status" aria-live="polite">Lade Stundenplan …</div></div></div></header><div class="toolbar"><nav id="students" class="toggle" aria-label="Schüler auswählen"></nav><button id="todayBtn" aria-label="Heutigen Schultag öffnen" title="Zum heutigen Schultag">Heute</button><nav class="toggle" aria-label="Ansicht wählen"><button id="weekBtn">Woche</button><button id="dayBtn">Tag</button></nav></div><main id="app"></main><div class="help-space" aria-hidden="true"></div><footer class="help"><h2>Tipps zur Bedienung</h2><p>Schullogo antippen oder am Seitenanfang nach unten ziehen: Daten und bei Bedarf die gesamte App aktualisieren. Nur wenn die automatische App-Aktualisierung nicht gelingt, die Web-App vollständig schließen und erneut öffnen.</p><p>In der Wochenansicht einen beliebigen Bereich eines Schultages antippen: Tagesansicht öffnen.</p><p>In der Tagesansicht nach links oder rechts wischen oder die Pfeile benutzen: Schultag wechseln.</p><p>Julia oder Carolina auswählen und zwischen Woche und Tag umschalten. Mit „Heute“ zum aktuellen Schultag springen (am Wochenende zum Montag).</p><p>Nach dem ersten vollständigen Laden funktioniert der Stundenplan auch offline.</p></footer><div class="notice" id="notice" role="status"></div><script>
-const APP_VERSION='010';const names=['Montag','Dienstag','Mittwoch','Donnerstag','Freitag'];const colors={'F':'#6366f1','G':'#64748b','F/L':'#6366f1','L/F':'#6366f1','MI2/NuT2':'#14b8a6','EI_2/NuT1':'#14b8a6','EI_1/MI1':'#14b8a6','D':'#f59e0b','M':'#3b82f6','E':'#16a34a','Mu':'#a855f7','Ev':'#e8796b','Sw':'#0ea5e9','Sw3':'#0ea5e9','Geo':'#d97706','Ku':'#ec4899','NuT':'#14b8a6','NuT1':'#14b8a6','NuT2':'#14b8a6'};
+
+/* 011: identical vertical geometry for week and day, including two breaks. */
+#app{--pause-height:28px;--row-gap:3px}
+.week{position:relative}
+.week .daycol,.week .timecol{grid-template-rows:var(--nav-height) repeat(2,var(--lesson-row-height)) var(--pause-height) repeat(2,var(--lesson-row-height)) var(--pause-height) repeat(2,var(--lesson-row-height));gap:var(--row-gap)}
+.week .pause-spacer{height:var(--pause-height);pointer-events:none}
+.pausebar{height:var(--pause-height);min-height:var(--pause-height);max-height:var(--pause-height);border-radius:8px;background:#f5f0e6;color:#8a7355;border:1px solid #e7dccb;display:flex;align-items:center;justify-content:center;font-size:clamp(11px,3vw,14px);font-weight:650;white-space:nowrap;position:relative;isolation:isolate;overflow:hidden;--accent:#b58a4a;--progress:0%}
+.week>.pausebar{position:absolute;left:0;right:0;z-index:3}
+.week>.pausebar[data-break="0"]{top:calc(var(--nav-height) + 2 * var(--lesson-row-height) + 3 * var(--row-gap))}
+.week>.pausebar[data-break="1"]{top:calc(var(--nav-height) + 4 * var(--lesson-row-height) + var(--pause-height) + 6 * var(--row-gap))}
+.panel .pausebar{margin:0 0 var(--row-gap)}
+.lesson{position:relative;isolation:isolate;--progress:0%}
+.lesson.is-current,.pausebar.is-current{outline:2px solid var(--accent);outline-offset:-2px;border-radius:8px}
+.lesson.is-current::before,.pausebar.is-current::before{content:"";position:absolute;inset:0 auto 0 0;width:var(--progress);background:color-mix(in srgb,var(--accent) 17%,transparent);z-index:-1;pointer-events:none;transition:width .95s linear}
+.lesson.is-current>*{position:relative;z-index:1}
+.pausebar.is-current::before{background:color-mix(in srgb,#b58a4a 22%,transparent)}
+@media(prefers-reduced-motion:reduce){.lesson.is-current::before,.pausebar.is-current::before{transition:none}}
+</style></head><body><header><div class="brand"><button id="reload" aria-label="Aktualisieren und offline speichern" title="Aktualisieren und offline speichern"><img src="icon-192.png" alt="Schullogo"></button><div class="brandtext"><div class="titleline"><h1>Stundenplan</h1><span class="build-version" aria-label="App-Version 011">V.011</span></div><div class="status" id="status" aria-live="polite">Lade Stundenplan …</div></div></div></header><div class="toolbar"><nav id="students" class="toggle" aria-label="Schüler auswählen"></nav><button id="todayBtn" aria-label="Heutigen Schultag öffnen" title="Zum heutigen Schultag">Heute</button><nav class="toggle" aria-label="Ansicht wählen"><button id="weekBtn">Woche</button><button id="dayBtn">Tag</button></nav></div><main id="app"></main><div class="help-space" aria-hidden="true"></div><footer class="help"><h2>Tipps zur Bedienung</h2><p>Schullogo antippen oder am Seitenanfang nach unten ziehen: Daten und bei Bedarf die gesamte App aktualisieren. Nur wenn die automatische App-Aktualisierung nicht gelingt, die Web-App vollständig schließen und erneut öffnen.</p><p>In der Wochenansicht einen beliebigen Bereich eines Schultages antippen: Tagesansicht öffnen.</p><p>Die laufende Stunde oder Pause wird farbig umrandet; eine sanfte Füllung zeigt den Zeitfortschritt. In der Tagesansicht nach links oder rechts wischen oder die Pfeile benutzen: Schultag wechseln.</p><p>Julia oder Carolina auswählen und zwischen Woche und Tag umschalten. Die letzte Auswahl wird auf diesem Gerät gespeichert. Mit „Heute“ zum aktuellen Schultag springen (am Wochenende zum Montag).</p><p>Nach dem ersten vollständigen Laden funktioniert der Stundenplan auch offline.</p></footer><div class="notice" id="notice" role="status"></div><script>
+const APP_VERSION='011';const names=['Montag','Dienstag','Mittwoch','Donnerstag','Freitag'];const colors={'F':'#6366f1','G':'#64748b','F/L':'#6366f1','L/F':'#6366f1','MI2/NuT2':'#14b8a6','EI_2/NuT1':'#14b8a6','EI_1/MI1':'#14b8a6','D':'#f59e0b','M':'#3b82f6','E':'#16a34a','Mu':'#a855f7','Ev':'#e8796b','Sw':'#0ea5e9','Sw3':'#0ea5e9','Geo':'#d97706','Ku':'#ec4899','NuT':'#14b8a6','NuT1':'#14b8a6','NuT2':'#14b8a6'};
 const $=id=>document.getElementById(id), el=(tag,cls,txt)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(txt!==undefined)x.textContent=txt;return x};const stored=(key,fallback)=>{try{return localStorage.getItem(key)||fallback}catch{return fallback}};const save=(key,value)=>{try{localStorage.setItem(key,value)}catch{}};
-let data=null,student=stored('student','j'),view=stored('view','week'),day=(()=>{const d=new Date().getDay();return d>=1&&d<=5?d-1:0})(),busy=false,refreshing=false,remoteData=null,remoteVersion=null,toastTimer=0,renderTimer=0;const reduce=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+let data=null,student=stored('student','j'),view=stored('view','week'),day=(()=>{const v=Number(stored('day','-1'));if(Number.isInteger(v)&&v>=0&&v<5)return v;const d=new Date().getDay();return d>=1&&d<=5?d-1:0})(),busy=false,refreshing=false,remoteData=null,remoteVersion=null,toastTimer=0,renderTimer=0;const reduce=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
 function current(){return data.students.find(s=>s.id===student)||data.students[0]}function dateText(){const d=stored('lastUpdate','');return d?new Date(d).toLocaleString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):'Noch nicht offline gespeichert'}function status(msg,available=false){$('status').textContent=msg;$('status').classList.toggle('available',available)}function normalStatus(){status('Letzte Aktualisierung: '+dateText())}function toast(msg){const n=$('notice');n.textContent=msg;n.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>n.classList.remove('show'),2800)}
 const fullSubjects={'D':'Deutsch','M':'Mathematik','E':'Englisch','Mu':'Musik','Ev':'Evangelische Religion','F':'Französisch','L':'Latein','Geo':'Geografie','Ku':'Kunst','G':'Geschichte','NuT':'Natur und Technik','Sw':'Schwimmen','Sw3':'Schwimmen3','NuT1':'Natur und Technik 1','NuT2':'Natur und Technik 2'};
 function expandedSubject(code){return fullSubjects[code]||code}
+function selectDay(index){day=index;save('day',String(day))}
 function todayIndex(){const n=new Date().getDay();return n>=1&&n<=5?n-1:0}
 function card(entry,n,detailed=false,weekday=-1){const c=el('div','lesson'),items=entry?(Array.isArray(entry)?entry:[entry]):[],subject=items.map(x=>x.subject).join('/'),room=items.map(x=>x.room).filter(Boolean).join('/');if(!subject)c.classList.add('empty');c.style.setProperty('--accent',colors[subject]||colors[items[0].subject]||'#8fa8c6');c.dataset.weekday=String(weekday);c.dataset.period=String(n);if(detailed)c.append(el('div','num',`${n}. Stunde · ${data.times[n-1]||''}`));c.append(el('div','subject',detailed?expandedSubject(subject):subject));if(room)c.append(el('div','room',room));return c}
-function makeWeek(s){const grid=el('div','week'),count=Math.max(data.times.length,...s.days.map(x=>x.length));grid.style.setProperty('--rows',count);const timecol=el('div','timecol');timecol.append(el('div','weekhead','Std.'));for(let n=0;n<count;n++){const t=el('div','timecell');t.append(el('strong','',(n+1)+'.'));(data.times[n]||'').split('–').forEach(x=>t.append(el('span','',x.trim())));timecol.append(t)}grid.append(timecol);names.forEach((name,d)=>{const col=el('div','daycol');col.style.setProperty('--rows',count);col.setAttribute('role','button');col.setAttribute('tabindex','0');col.setAttribute('aria-label',name+' in Tagesansicht öffnen');const open=()=>{day=d;setView('day')};col.onclick=open;col.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}};col.append(el('div','weekhead'+(new Date().getDay()===d+1?' today':''),name));for(let n=0;n<count;n++)col.append(card(s.days[d]?.[n]||null,n+1,false,d));grid.append(col)});return grid}
-function panel(entries,weekday){const p=el('div','panel');for(let i=0;i<6;i++)p.append(card(entries?.[i]||null,i+1,true,weekday));return p}
+const breaks=[{after:2,start:'09:30',end:'09:45'},{after:4,start:'11:15',end:'11:25'}];
+function pauseBar(i){const b=breaks[i],p=el('div','pausebar',`Pause · ${b.start}–${b.end} Uhr`);p.dataset.break=String(i);return p}
+function addBreakRows(container,createLesson){for(let n=0;n<6;n++){container.append(createLesson(n));if(n===1||n===3)container.append(el('div','pause-spacer'))}}
+function makeWeek(s){const grid=el('div','week');const timecol=el('div','timecol');timecol.append(el('div','weekhead','Std.'));addBreakRows(timecol,n=>{const t=el('div','timecell');t.append(el('strong','',(n+1)+'.'));(data.times[n]||'').split('–').forEach(x=>t.append(el('span','',x.trim())));return t});grid.append(timecol);
+names.forEach((name,d)=>{const col=el('div','daycol');col.setAttribute('role','button');col.setAttribute('tabindex','0');col.setAttribute('aria-label',name+' in Tagesansicht öffnen');const open=()=>{selectDay(d);setView('day')};col.onclick=open;col.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}};col.append(el('div','weekhead'+(new Date().getDay()===d+1?' today':''),name));addBreakRows(col,n=>card(s.days[d]?.[n]||null,n+1,false,d));grid.append(col)});
+for(let i=0;i<2;i++)grid.append(pauseBar(i));return grid}
+function panel(entries,weekday){const p=el('div','panel');p.dataset.weekday=String(weekday);for(let i=0;i<6;i++){p.append(card(entries?.[i]||null,i+1,true,weekday));if(i===1||i===3)p.append(pauseBar(i===1?0:1))}return p}
 // A single responsive row height is used in BOTH views. It is calculated
 // from the space below the common navigation, never from the selected view.
 function rowHeight(){
   const top=$('app').getBoundingClientRect().top;
   const screen=window.visualViewport?.height||window.innerHeight;
   const available=screen-top-12;
-  return Math.max(68,Math.min(90,Math.floor((available-35-5*4-6*3)/6)));
+  return Math.max(60,Math.min(90,Math.floor((available-35-2*28-9*3)/6)));
 }
 function applyRowHeight(){const root=document.documentElement;root.style.setProperty('--lesson-row-height',rowHeight()+'px');const w=$('app').clientWidth;const left=w<=390?47:52;const gap=w<=390?2:3;root.style.setProperty('--weekday-width',Math.max(38,(w-left-5*gap)/5)+'px')}
 function makeDay(s){
@@ -115,42 +138,35 @@ function render(animated=false){
 let lessonClockTimer=0;
 function clockMinutes(value){const match=/^(\d{1,2}):(\d{2})$/.exec(value.trim());return match?Number(match[1])*60+Number(match[2]):null}
 function activePeriod(now=new Date()){
-  const weekday=now.getDay();
-  if(!data||weekday<1||weekday>5)return null;
-  const secondOfDay=now.getHours()*3600+now.getMinutes()*60+now.getSeconds()+now.getMilliseconds()/1000;
-  for(let i=0;i<data.times.length;i++){
-    const parts=String(data.times[i]).split(/[–—-]/);
-    if(parts.length!==2)continue;
-    const start=clockMinutes(parts[0]),end=clockMinutes(parts[1]);
-    if(start===null||end===null)continue;
-    if(secondOfDay>=start*60&&secondOfDay<end*60)return {weekday:weekday-1,period:i+1};
-  }
-  return null;
+ const weekday=now.getDay();if(!data||weekday<1||weekday>5)return null;
+ const seconds=now.getHours()*3600+now.getMinutes()*60+now.getSeconds()+now.getMilliseconds()/1000;
+ for(let i=0;i<6;i++){
+   const parts=String(data.times[i]||'').split(/[–—-]/);if(parts.length!==2)continue;
+   const start=clockMinutes(parts[0]),end=clockMinutes(parts[1]);if(start===null||end===null)continue;
+   if(seconds>=start*60&&seconds<end*60)return {weekday:weekday-1,period:i+1,progress:(seconds-start*60)/((end-start)*60)};
+ }
+ for(let i=0;i<breaks.length;i++){const b=breaks[i],start=clockMinutes(b.start)*60,end=clockMinutes(b.end)*60;if(seconds>=start&&seconds<end)return {weekday:weekday-1,breakIndex:i,progress:(seconds-start)/(end-start)}}
+ return null;
 }
 function updateCurrentLesson(){
-  const active=activePeriod();
-  document.querySelectorAll('#app .lesson').forEach(card=>{
-    const match=!!active&&Number(card.dataset.weekday)===active.weekday&&Number(card.dataset.period)===active.period&&
-      (view==='week'||day===active.weekday);
-    card.classList.toggle('is-current',match);
-  });
+ const active=activePeriod();
+ document.querySelectorAll('#app .lesson').forEach(c=>{
+   const match=!!active&&active.period!==undefined&&Number(c.dataset.weekday)===active.weekday&&Number(c.dataset.period)===active.period&&(view==='week'||day===active.weekday);
+   c.classList.toggle('is-current',match);c.style.setProperty('--progress',match?(active.progress*100).toFixed(3)+'%':'0%');
+ });
+ document.querySelectorAll('#app .pausebar').forEach(c=>{
+   const panel=c.closest('.panel');const panelDay=panel?Number(panel.dataset.weekday):null;
+   const match=!!active&&active.breakIndex!==undefined&&Number(c.dataset.break)===active.breakIndex&&(view==='week'||(day===active.weekday&&panelDay===active.weekday));
+   c.classList.toggle('is-current',match);c.style.setProperty('--progress',match?(active.progress*100).toFixed(3)+'%':'0%');
+ });
 }
 function scheduleLessonClock(){
-  clearTimeout(lessonClockTimer);
-  if(document.hidden)return;
-  updateCurrentLesson();
-  const now=new Date();
-  const seconds=now.getHours()*3600+now.getMinutes()*60+now.getSeconds()+now.getMilliseconds()/1000;
-  let next=86400-seconds;
-  if(data){for(const interval of data.times){const parts=String(interval).split(/[–—-]/);if(parts.length!==2)continue;
-    for(const part of parts){const minutes=clockMinutes(part);if(minutes!==null){const delta=minutes*60-seconds;if(delta>0&&delta<next)next=delta}}
-  }}
-  // Resynchronize at every boundary and periodically after device-clock changes.
-  lessonClockTimer=setTimeout(scheduleLessonClock,Math.max(50,Math.min(next*1000+25,30000)));
+ clearTimeout(lessonClockTimer);if(document.hidden)return;
+ updateCurrentLesson();lessonClockTimer=setTimeout(scheduleLessonClock,1000);
 }
-function setView(v){if(view===v)return;view=v;save('view',v);render(true)}function slide(dir){if(busy||view!=='day')return;busy=true;const track=document.querySelector('.track');if(!track){busy=false;return}let done=false;const finish=()=>{if(done)return;done=true;day=(day+dir+5)%5;render()};track.style.transition=reduce()?'none':'transform 270ms cubic-bezier(.2,.75,.25,1)';track.style.transform=`translateX(${dir>0?'-66.666667%':'0%'})`;if(reduce())finish();else{track.addEventListener('transitionend',finish,{once:true});setTimeout(finish,360)}}
+function setView(v){if(view===v)return;view=v;save('view',v);render(true)}function slide(dir){if(busy||view!=='day')return;busy=true;const track=document.querySelector('.track');if(!track){busy=false;return}let done=false;const finish=()=>{if(done)return;done=true;selectDay((day+dir+5)%5);render()};track.style.transition=reduce()?'none':'transform 270ms cubic-bezier(.2,.75,.25,1)';track.style.transform=`translateX(${dir>0?'-66.666667%':'0%'})`;if(reduce())finish();else{track.addEventListener('transitionend',finish,{once:true});setTimeout(finish,360)}}
 function enableSwipe(viewport,track){let start=null;viewport.addEventListener('pointerdown',e=>{if(busy||!e.isPrimary)return;start={x:e.clientX,y:e.clientY,axis:null,dx:0};if(e.pointerType==='mouse')viewport.setPointerCapture(e.pointerId)});viewport.addEventListener('pointermove',e=>{if(!start||busy)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;if(start.axis===null&&Math.hypot(dx,dy)>9)start.axis=Math.abs(dx)>Math.abs(dy)*1.25?'x':'y';if(start.axis==='x'){start.dx=dx;const pct=Math.max(-95,Math.min(95,dx/viewport.clientWidth*100));track.style.transition='none';track.style.transform=`translateX(${-33.333333+pct/3}%)`}});const end=()=>{if(!start||busy)return;const dx=start.dx,axis=start.axis;start=null;if(axis==='x'&&Math.abs(dx)>Math.min(65,viewport.clientWidth*.18)){slide(dx<0?1:-1)}else{track.style.transition='transform 210ms ease-out';track.style.transform='translateX(-33.333333%)'}};viewport.addEventListener('pointerup',end);viewport.addEventListener('pointercancel',end)}
-$('weekBtn').onclick=()=>setView('week');$('dayBtn').onclick=()=>setView('day');$('todayBtn').onclick=()=>{day=todayIndex();if(view!=='day'){setView('day')}else render(true);window.scrollTo({top:0,behavior:reduce()?'instant':'smooth'})};
+$('weekBtn').onclick=()=>setView('week');$('dayBtn').onclick=()=>setView('day');$('todayBtn').onclick=()=>{selectDay(todayIndex());if(view!=='day'){setView('day')}else render(true);window.scrollTo({top:0,behavior:reduce()?'instant':'smooth'})};
 // Explicit server checks bypass all caches. Stored data is only replaced after a complete successful download.
 async function fetchFresh(path){const r=await fetch('./'+path+'?fresh='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return r.json()}
 function signature(d){return JSON.stringify({times:d.times,students:d.students})}
